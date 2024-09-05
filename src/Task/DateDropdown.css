@@ -1,0 +1,44 @@
+.date-dropdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  border-radius:4px;
+  border: 1px solid #ccc;
+}
+
+.date-dropdown-container select,
+.date-dropdown-container input {
+  font-size: 16px;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.date-dropdown-container input[type="date"] {
+  width: 200px;
+}
+
+.date-dropdown-container button {
+  background-color: #3a0303; /* Green */
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.date-dropdown-container button:hover {
+  background-color: #970303; /* Darker green */
+}
+
+.add-date-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}

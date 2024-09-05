@@ -1,0 +1,13 @@
+.display-input {
+    width: 15rem;
+    height:4rem;
+    font-size: 2rem;
+    text-align: right;
+
+}
+
+.display {
+    display:flex;
+    justify-content:center;
+}
+
