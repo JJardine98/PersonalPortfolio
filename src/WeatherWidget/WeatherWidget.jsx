@@ -5,6 +5,8 @@ import WeatherCard from './WeatherCard';
 import ForecastCard from './ForecastCard';
 import './WeatherWidget.css';
 
+
+
 const WeatherWidget = () => {
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
