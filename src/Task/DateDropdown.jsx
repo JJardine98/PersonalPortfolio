@@ -1,58 +1,58 @@
-import React, { useState, useEffect } from 'react';
-//Import DateDropdown.css
+import React from 'react';
+import { useQuery, useMutation, useQueryClient } from 'react-query';
 import './DateDropdown.css';
 
+const fetchDates = async () => {
+  const response = await fetch('http://localhost:5000/dates');
+  if (!response.ok) throw new Error('Network response was not ok');
+  return response.json();
+};
+
 const DateDropdown = ({ onDateChange }) => {
-  const [dates, setDates] = useState([]);
-  const [selectedDate, setSelectedDate] = useState('');
-  const [newDate, setNewDate] = useState('');
+  const queryClient = useQueryClient();
+  const { data: dates, error, isLoading } = useQuery('dates', fetchDates);
 
-  // Fetch dates when the component mounts
-  useEffect(() => {
-    const fetchDates = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/dates');
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log('Fetched dates:', data);
-      } catch (error) {
-        console.error('Error fetching dates:', error);
-      }
-    };
-    
+  const addDateMutation = useMutation(
+    (newDate) => fetch('http://localhost:5000/dates', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: newDate }),
+    }).then(res => res.json()),
+    {
+      onSuccess: () => queryClient.invalidateQueries('dates'),
+    }
+  );
 
-    fetchDates();
-  }, []);
+  const deleteDateMutation = useMutation(
+    (date) => fetch(`http://localhost:5000/dates/${date}`, {
+      method: 'DELETE',
+    }),
+    {
+      onSuccess: () => queryClient.invalidateQueries('dates'),
+    }
+  );
 
-  // Notify parent component of date change
-  useEffect(() => {
+  const [selectedDate, setSelectedDate] = React.useState('');
+  const [newDate, setNewDate] = React.useState('');
+
+  React.useEffect(() => {
+    if (dates && dates.length > 0) {
+      setSelectedDate(dates[0].date); // Use the appropriate property
+      onDateChange(dates[0].date); // Use the appropriate property
+    }
+  }, [dates, onDateChange]);
+
+  React.useEffect(() => {
     if (selectedDate) onDateChange(selectedDate);
   }, [selectedDate, onDateChange]);
 
-  // Handle new date input change
   const handleNewDateChange = (e) => setNewDate(e.target.value);
 
-  // Add a new date
   const addDate = async () => {
     if (newDate.trim()) {
       try {
-        const response = await fetch('http://localhost:5000/dates', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ date: newDate }),
-        });
-
-        if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorText}`);
-        }
-
-        const addedDate = await response.json();
-        setDates([...dates, addedDate.date]); // Update the dropdown with the new date
-        setNewDate(''); // Clear the input field
-        if (dates.length === 0) setSelectedDate(addedDate.date); // Set new date as selected if it's the first date
+        await addDateMutation.mutateAsync(newDate);
+        setNewDate('');
       } catch (error) {
         console.error('Error adding date:', error.message);
       }
@@ -63,29 +63,18 @@ const DateDropdown = ({ onDateChange }) => {
     if (!selectedDate) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/dates/${selectedDate}`, {
-        method: 'DELETE',
-      });
-      if (!response.ok) throw new Error('Failed to delete date');
-
-      // Update the dates list after deletion
-      setDates((prevDates) => prevDates.filter((date) => date !== selectedDate));
-      
-      // Set the selected date to the next available date or clear it
-      if (dates.length > 1) {
-        setSelectedDate(dates[1]);
-      } else {
-        setSelectedDate('');
-        onDateChange(''); // Notify parent of the change
-      }
+      await deleteDateMutation.mutateAsync(selectedDate);
+      setSelectedDate('');
+      onDateChange('');
     } catch (error) {
-      console.error('Error deleting date:', error);
+      console.error('Error deleting date:', error.message);
     }
   };
 
-
-  // Handle date selection
   const handleDateSelect = (e) => setSelectedDate(e.target.value);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="date-dropdown-container">
@@ -94,8 +83,8 @@ const DateDropdown = ({ onDateChange }) => {
         onChange={handleDateSelect}
       >
         {dates.map((date) => (
-          <option key={date} value={date}>
-            {date}
+          <option key={date._id} value={date.date}> {/* Use a unique identifier and appropriate property */}
+            {date.date}
           </option>
         ))}
       </select>
@@ -112,7 +101,6 @@ const DateDropdown = ({ onDateChange }) => {
         Delete Date
       </button>
     </div>
-    
   );
 };
 

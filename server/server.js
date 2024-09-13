@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const taskRoutes = require('./routes/tasks');
 const dateRoutes = require('./routes/dates');
 const bodyParser = require('body-parser');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const mongoose = require('mongoose');
 
 dotenv.config();
 
@@ -15,37 +15,15 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// MongoDB connection setup
-const uri = "mongodb+srv://jarodj98:5b2pGiN66123$@portfoliodb.4ktsy.mongodb.net/?retryWrites=true&w=majority&appName=PortfolioDB";
-let db;
+// MongoDB connection setup using Mongoose
+const uri = process.env.MONGODB_URI || "mongodb+srv://jarodj98:5b2pGiN66123$@portfoliodb.4ktsy.mongodb.net/?retryWrites=true&w=majority&appName=PortfolioDB";
 
-// Create a MongoClient with MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
-
-async function connectDB() {
-  try {
-    await client.connect();
-    db = client.db('tasklist'); // Store reference to the database
-    console.log("Connected to MongoDB Atlas!");
-  } catch (error) {
-    console.error("Error connecting to MongoDB: ", error);
-  }
-}
-
-// Call the function to connect to MongoDB
-connectDB();
-
-// Middleware to pass database to routes
-app.use((req, res, next) => {
-  req.db = db; // Attach database object to every request
-  next();
-});
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("Connected to MongoDB Atlas!"))
+.catch(error => console.error("Error connecting to MongoDB: ", error));
 
 // Routes
 app.use('/tasks', taskRoutes);
