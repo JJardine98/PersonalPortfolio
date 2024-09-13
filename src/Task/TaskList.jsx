@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
+import DateDropdown from './DateDropdown';
 import './TaskList.css';
 
 const fetchTasks = async (date) => {
@@ -8,15 +9,13 @@ const fetchTasks = async (date) => {
   return response.json();
 };
 
-const TaskList = ({ selectedDate }) => {
-  const [taskText, setTaskText] = useState('');
+const TaskList = () => {
+  const [taskText, setTaskText] = React.useState('');
+  const [selectedDate, setSelectedDate] = React.useState(new Date().toISOString().split('T')[0]);
+
   const queryClient = useQueryClient();
 
-  const { data: tasks, error: tasksError, isLoading: tasksLoading } = useQuery(
-    ['tasks', selectedDate],
-    () => fetchTasks(selectedDate),
-    { enabled: !!selectedDate } // Only fetch if a date is selected
-  );
+  const { data: tasks, error: tasksError, isLoading: tasksLoading } = useQuery(['tasks', selectedDate], () => fetchTasks(selectedDate));
 
   const addTaskMutation = useMutation(
     (newTask) => fetch('http://localhost:5000/tasks', {
@@ -28,6 +27,25 @@ const TaskList = ({ selectedDate }) => {
       onSuccess: () => queryClient.invalidateQueries(['tasks', selectedDate]),
     }
   );
+
+  const handleInputChange = (e) => setTaskText(e.target.value);
+
+  const addTask = async () => {
+    if (taskText.trim()) {
+      const newTask = {
+        text: taskText,
+        completed: false,
+        date: selectedDate,
+      };
+
+      try {
+        await addTaskMutation.mutateAsync(newTask);
+        setTaskText('');
+      } catch (error) {
+        console.error('Error adding task:', error.message);
+      }
+    }
+  };
 
   const toggleTaskCompletion = async (taskId) => {
     try {
@@ -55,31 +73,12 @@ const TaskList = ({ selectedDate }) => {
     }
   };
 
-  const handleInputChange = (e) => setTaskText(e.target.value);
-
-  const addTask = async () => {
-    if (taskText.trim()) {
-      const newTask = {
-        text: taskText,
-        completed: false,
-        date: selectedDate,
-      };
-
-      try {
-        await addTaskMutation.mutateAsync(newTask);
-        setTaskText('');
-      } catch (error) {
-        console.error('Error adding task:', error.message);
-      }
-    }
-  };
-
   if (tasksLoading) return <div>Loading...</div>;
   if (tasksError) return <div>Error: {tasksError.message}</div>;
 
   return (
     <div className="task-list-container">
-      <h1>Tasks for {selectedDate ? new Date(selectedDate).toLocaleDateString() : 'Select a Date'}</h1>
+      <DateDropdown onDateChange={setSelectedDate} />
       <div className="task-input">
         <input
           type="text"
@@ -88,6 +87,7 @@ const TaskList = ({ selectedDate }) => {
           placeholder="Enter a new task..."
         />
         <button onClick={addTask}>Add Task</button>
+        <button onClick={() => setTaskText('')}>Clear</button>
       </div>
       <ul className="task-list">
         {tasks.map((task) => (

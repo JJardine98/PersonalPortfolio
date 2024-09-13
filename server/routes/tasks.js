@@ -5,23 +5,14 @@ const Task = require('../models/Task');
 // Task route (tasks.js)
 router.get('/', async (req, res) => {
   const { date } = req.query;
-  console.log('Fetching tasks for date:', date);  // Log the requested date
 
   try {
     const tasks = await Task.find({ date });
-    if (tasks.length === 0) {
-      // If no tasks exist for the requested date, return an empty array
-      return res.json([]);
-    }
-    res.json(tasks);  // Return the tasks found
+    res.json(tasks);
   } catch (error) {
-    console.error('Error fetching tasks:', error);  // Log the error
-    res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json({ message: error.message });
   }
 });
-
-
-
 
 router.post('/', async (req, res) => {
   try {
