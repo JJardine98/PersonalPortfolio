@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jarodtools/static/css/main.9dea1859.css",
+    "main.js": "/jarodtools/static/js/main.985807fd.js",
+    "static/js/453.08788d81.chunk.js": "/jarodtools/static/js/453.08788d81.chunk.js",
+    "index.html": "/jarodtools/index.html",
+    "main.9dea1859.css.map": "/jarodtools/static/css/main.9dea1859.css.map",
+    "main.985807fd.js.map": "/jarodtools/static/js/main.985807fd.js.map",
+    "453.08788d81.chunk.js.map": "/jarodtools/static/js/453.08788d81.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9dea1859.css",
+    "static/js/main.985807fd.js"
+  ]
+}
