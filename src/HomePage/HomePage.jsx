@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import '../Style.css';
 import { SocialIcon } from 'react-social-icons';
 import 'react-social-icons/github';
 import 'react-social-icons/linkedin';
 import 'react-social-icons/email';
-
+import {ThemeContext} from '../ThemeProvider';
 const HomePage = () => {
-  const [theme, setTheme] = useState('normal'); // State to track the theme
+  const { theme, setTheme } = useContext(ThemeContext);
 
-  const handleThemeChange = (e) => {
-    setTheme(e.target.value);
-    document.body.className = e.target.value; // Set the theme class to the body
+  const handleThemeChange = (event) => {
+    setTheme(event.target.value);
   };
 
 
@@ -38,10 +37,11 @@ const HomePage = () => {
         {/* Theme selector dropdown */}
         <div className="theme-selector">
           <label htmlFor="theme">Choose Theme: </label>
-          <select id="theme" value={theme} onChange={handleThemeChange}>
-            <option value="light">Regular</option>
-            <option value="dark-theme">Dark</option>
-          </select>
+          <select value={theme} onChange={handleThemeChange}>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          {/* Add more themes as needed */}
+      </select>
         </div>
       </section>
 

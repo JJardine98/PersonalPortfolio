@@ -12,7 +12,6 @@ const WeatherWidget = () => {
   const [forecast, setForecast] = useState(null);
   const [city, setCity] = useState('');
   const [error, setError] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const fetchWeather = async (lat, lon) => {
@@ -107,15 +106,10 @@ const WeatherWidget = () => {
     }
   }, [city]);
 
-  const toggleTheme = () => {
-    setDarkMode(prevMode => !prevMode);
-  };
+
 
   return (
-    <div className={`weather-widget ${darkMode ? 'dark-theme' : ''}`}>
-      <button onClick={toggleTheme}>
-        {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-      </button>
+    <div className={'weather-widget'}>
       <input
         type="text"
         value={city}
