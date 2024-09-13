@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
 import { SocialIcon } from 'react-social-icons';
 import 'react-social-icons/github';
@@ -6,12 +6,20 @@ import 'react-social-icons/linkedin';
 import 'react-social-icons/email';
 
 const HomePage = () => {
+  const [theme, setTheme] = useState('normal'); // State to track the theme
+
+  const handleThemeChange = (e) => {
+    setTheme(e.target.value);
+    document.body.className = e.target.value; // Set the theme class to the body
+  };
+
+
   return (
-    <div className="home">
+    <div className={`home ${theme}`}>
       <section className="hero">
         <div className="container">
           <h2>Hello, I'm Jarod Jardine</h2>
-          <img src={process.env.PUBLIC_URL + "/images/profile.jpg"} alt="Profile" className="profile-picture" />
+          <img src={"/images/profile.jpg"} alt="Profile" className="profile-picture" />
           <p>Full Stack Developer</p>
         </div>
         <div className="container">
@@ -21,11 +29,20 @@ const HomePage = () => {
         </div>
         
         <div className="social-icons">
-        <SocialIcon url="https://www.github.com/JJardine98" />
-        <SocialIcon url="https://www.linkedin.com/in/jarod-jardine-40b7b12b3/" />
-        <SocialIcon url="mailto:jjardine07@mynbcc.ca" />
+          <SocialIcon url="https://www.github.com/JJardine98" />
+          <SocialIcon url="https://www.linkedin.com/in/jarod-jardine-40b7b12b3/" />
+          <SocialIcon url="mailto:jjardine07@mynbcc.ca" />
         </div>
         <p>Connect With Me</p>
+
+        {/* Theme selector dropdown */}
+        <div className="theme-selector">
+          <label htmlFor="theme">Choose Theme: </label>
+          <select id="theme" value={theme} onChange={handleThemeChange}>
+            <option value="light">Regular</option>
+            <option value="dark-theme">Dark</option>
+          </select>
+        </div>
       </section>
 
      

@@ -156,3 +156,67 @@ body {
   margin-top: 1rem;
   gap: 0.5rem;
 }
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-theme .hero {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-theme .hero h2,
+.dark-theme .hero p {
+  color: #e0e0e0;
+}
+
+.dark-theme .about,
+.dark-theme .skills,
+.dark-theme .projects {
+  background-color: #181818;
+  color: #e0e0e0;
+}
+
+.dark-theme .about h2,
+.dark-theme .skills h2,
+.dark-theme .projects h2 {
+  color: #ffffff;
+}
+
+.dark-theme .skills ul li {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.dark-theme .skills ul li:hover {
+  background-color: #505050;
+}
+
+.dark-theme .projects .project-item {
+  background-color: #222222;
+  color: #ffffff;
+}
+
+.dark-theme .projects .project-item:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.dark-theme .projects .project-link {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.dark-theme .projects .project-link:hover {
+  background-color: #505050;
+}
+
+.dark-theme .social-icons a {
+  color: #ffffff;
+}
+
+select {
+  border-radius:7.5px;
+}

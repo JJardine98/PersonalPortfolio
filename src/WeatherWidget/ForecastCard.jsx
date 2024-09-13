@@ -1,12 +1,14 @@
 // src/components/ForecastCard.js
 import React from 'react';
-import './ForecastCard.css';
+import './WeatherThemes.css';
 
 const ForecastCard = ({ data }) => {
   const { list } = data;
 
   // Filter the list to show forecasts every 5 hours
   const filteredList = list.filter((item, index) => index % 3 === 0);
+
+  
 
   return (
     <div className="forecast-card">

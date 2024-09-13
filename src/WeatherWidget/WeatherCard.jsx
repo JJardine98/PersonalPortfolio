@@ -1,6 +1,7 @@
 // src/components/WeatherCard.js
 import React from 'react';
-import './WeatherCard.css';
+import './WeatherThemes.css';
+
 
 const WeatherCard = ({ data }) => {
   const { main, weather, name, sys, dt } = data;
