@@ -9,7 +9,7 @@ import HomePage from './HomePage/HomePage';
 import VideoLoader from './Youtube/VideoLoader'; 
 import TaskList from './Task/TaskList';
 import Calculator from './Calculator/Calculator';
-import Calender from './Task/Calender'
+
 // Create a QueryClient instance
 const queryClient = new QueryClient();
 
@@ -24,7 +24,6 @@ const App = () => (
             <Route path="/weather" element={<WeatherWidget />} />
             <Route path="/video" element={<VideoLoader />} />
             <Route path="/video/:videoId" element={<VideoLoader />} /> {/* Route for video ID */}
-            <Route path="/calender" element={<Calender />} />
             <Route path="/task" element={<TaskList />} />
             <Route path="/calc" element={<Calculator />} />
           </Routes>
