@@ -1,0 +1,421 @@
+  /* TaskList.jsx styles */
+
+  .task-list-container {
+    width: 90%; /* Adjust to fit smaller screens */
+    max-width: 800px; /* Maintain max width */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #3a0303;
+    text-align: center;
+  }
+  
+  .task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .task-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .task-input button:hover {
+    background-color: #970303;
+    color: #fff;
+  }
+  
+  .task-input button:first-child {
+    background-color: #3a0303;
+    color: #fff;
+  }
+  
+  
+  
+  .task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .task-list li.completed {
+    background: #d4edda;
+    text-decoration: line-through;
+  }
+  
+  .task-list li:hover {
+    background: #f8f9fa;
+    transform: scale(1.01);
+  }
+  
+  .task-controls {
+    display: flex;
+    gap: 10px;
+  }
+
+  .task-input button {
+    background: #3a0303;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:5px;
+    width:7rem;
+    height:3rem;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #fff;
+}
+  
+  .task-controls button {
+    background: #3a0303;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:5px;
+    width:7rem;
+    height:3rem;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .task-controls button:hover {
+    background: #970303;
+    color: #fff;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.75em;
+    }
+  
+    .task-input {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .task-input button {
+      width: 100%; /* Buttons take full width on small screens */
+      padding: 10px 0; /* Adjust padding */
+    }
+  
+    .task-list li {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align content to the start */
+      padding: 15px; /* Increase padding for more space */
+    }
+  
+    .task-controls {
+      width: 100%; /* Task controls take full width */
+      justify-content: space-between; /* Spread out the buttons */
+    }
+  
+    .task-controls button {
+      flex: 1; /* Buttons take equal width */
+      text-align: center; /* Center text */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    .task-input input {
+      font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+  
+    .task-list li {
+      padding: 10px; /* Slightly reduce padding */
+    }
+  
+    .task-controls button {
+      font-size: 0.85em; /* Reduce button font size */
+      padding: 5px; /* Reduce padding */
+    }
+  }
+  
+
+  /* DateDropdown.jsx styles */
+
+  .date-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    margin-bottom:20px;
+    border-radius:4px;
+    border: 1px solid #ccc;
+  }
+  
+  .date-dropdown-container select,
+  .date-dropdown-container input {
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .date-dropdown-container input[type="date"] {
+    width: 200px;
+  }
+  
+  .date-dropdown-container button {
+    background-color: #3a0303; 
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .date-dropdown-container button:hover {
+    background-color: #970303; 
+  }
+  
+  .add-date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  /* Dark Theme Styles */
+  /* TaskList.jsx styles - Dark Theme */
+
+.dark .task-list-container {
+    width: 90%; /* Adjust to fit smaller screens */
+    max-width: 800px; /* Maintain max width */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Dark background */
+    color: #f1f1f1; /* Light text color */
+  }
+  
+  .dark h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f1c40f; /* Highlight color */
+    text-align: center;
+  }
+  
+  .dark .task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .dark .task-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #2c2c2c; /* Dark input background */
+    color: #f1f1f1; /* Light text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  }
+  
+  .dark .task-input button:hover {
+    background-color: #e74c3c; /* Darker hover effect */
+    color: #fff;
+  }
+  
+  .dark .task-input button:first-child {
+    background-color: #f39c12; /* Highlight color */
+    color: #fff;
+  }
+  
+  .dark .task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .dark .task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #2c2c2c; /* Dark task background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .dark .task-list li.completed {
+    background: #27ae60; /* Completed task green */
+    text-decoration: line-through;
+  }
+  
+  .dark .task-list li:hover {
+    background: #34495e; /* Hover effect */
+    transform: scale(1.01);
+  }
+  
+  .dark .task-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .dark .task-input button {
+    background: #e67e22; /* Highlight button */
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 5px;
+    width: 7rem;
+    height: 3rem;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .dark .task-controls button {
+    background: #f39c12; /* Highlight control buttons */
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 5px;
+    width: 7rem;
+    height: 3rem;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .dark .task-controls button:hover {
+    background: #e74c3c; /* Darker hover effect */
+    color: #fff;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .dark h1 {
+      font-size: 1.75em;
+    }
+  
+    .dark .task-input {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .dark .task-input button {
+      width: 100%; /* Buttons take full width on small screens */
+      padding: 10px 0; /* Adjust padding */
+    }
+  
+    .dark .task-list li {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align content to the start */
+      padding: 15px; /* Increase padding for more space */
+    }
+  
+    .dark .task-controls {
+      width: 100%; /* Task controls take full width */
+      justify-content: space-between; /* Spread out the buttons */
+    }
+  
+    .dark .task-controls button {
+      flex: 1; /* Buttons take equal width */
+      text-align: center; /* Center text */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    .dark .task-input input {
+      font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+  
+    .dark .task-list li {
+      padding: 10px; /* Slightly reduce padding */
+    }
+  
+    .dark .task-controls button {
+      font-size: 0.85em; /* Reduce button font size */
+      padding: 5px; /* Reduce padding */
+    }
+  }
+  
+  /* DateDropdown.jsx styles - Dark Theme */
+  
+  .dark .date-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #555; /* Darker border */
+    background-color: #1e1e1e; /* Dark background */
+    color: #f1f1f1; /* Light text color */
+  }
+  
+  .dark .date-dropdown-container select,
+  .dark .date-dropdown-container input {
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #555; /* Darker border */
+    background-color: #2c2c2c; /* Dark input background */
+    color: #f1f1f1; /* Light text */
+  }
+  
+  .dark .date-dropdown-container input[type="date"] {
+    width: 200px;
+  }
+  
+  .dark .date-dropdown-container button {
+    background-color: #e67e22; /* Highlight button color */
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .dark .date-dropdown-container button:hover {
+    background-color: #e74c3c; /* Darker hover effect */
+  }
+  
+  .dark .add-date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  

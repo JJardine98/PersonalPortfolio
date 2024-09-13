@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import '../Style.css';
+import './TaskStyle.css';
 
 const fetchDates = async () => {
   const response = await fetch('http://localhost:5000/dates');
@@ -79,6 +79,7 @@ const DateDropdown = ({ onDateChange }) => {
   return (
     <div className="date-dropdown-container">
       <select
+        className="date-dropdown"
         value={selectedDate}
         onChange={handleDateSelect}
       >

@@ -38,7 +38,7 @@ const HomePage = () => {
         <div className="theme-selector">
           <label htmlFor="theme">Choose Theme: </label>
           <select value={theme} onChange={handleThemeChange}>
-          <option value="light">Light</option>
+          <option value="light">Crimson</option>
           <option value="dark">Dark</option>
           {/* Add more themes as needed */}
       </select>
