@@ -12,14 +12,16 @@ const DateDropdown = ({ onDateChange }) => {
     const fetchDates = async () => {
       try {
         const response = await fetch('http://localhost:5000/dates');
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
-        setDates(data);
-        if (data.length > 0) setSelectedDate(data[0]); // Set default to the first date
+        console.log('Fetched dates:', data);
       } catch (error) {
         console.error('Error fetching dates:', error);
       }
     };
+    
 
     fetchDates();
   }, []);

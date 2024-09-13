@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 
 const dateSchema = new mongoose.Schema({
-  date: { type: String, required: true, unique: true },
+  date: String,    // Date field in 'YYYY-MM-DD' format
 });
 
-const DateModel = mongoose.model('Date', dateSchema);
-
-module.exports = DateModel;
+const Date = mongoose.model('Date', dateSchema, 'dates'); // Specify 'dates' collection
+module.exports = Date;

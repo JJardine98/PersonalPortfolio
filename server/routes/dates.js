@@ -1,22 +1,26 @@
-// dates.js (or whatever your route file is named)
 const express = require('express');
 const router = express.Router();
-const DateModel = require('../models/Date'); // Assuming you have a Date model
+const Date = require('../models/Date');
 
-// GET /dates - Fetch all dates
+// Get all dates
 router.get('/', async (req, res) => {
   try {
-    const dates = await DateModel.find().sort({ date: 1 }); // Sort by date in ascending order
-    res.json(dates.map(dateObj => dateObj.date)); // Return only the date field
+    const dates = await Date.find();
+    res.json(dates);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error('Error fetching dates:', error);
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+
+
+
 
 // POST /dates - Add a new date
 router.post('/', async (req, res) => {
   try {
-    const newDate = new DateModel({ date: req.body.date });
+    const newDate = new Date({ date: req.body.date });
     await newDate.save();
     res.status(201).json(newDate);
   } catch (error) {
@@ -34,7 +38,7 @@ router.delete('/:date', async (req, res) => {
       return res.status(400).json({ message: 'Invalid date format' });
     }
 
-    const result = await DateModel.findOneAndDelete({ date });
+    const result = await Date.findOneAndDelete({ date });
     if (!result) return res.status(404).json({ message: 'Date not found' });
 
     res.json({ message: 'Date deleted' });

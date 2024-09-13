@@ -10,11 +10,13 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000'  // Allow React app to access API
+}));
 app.use(express.json());
 
 // MongoDB connection setup
-const uri = process.env.MONGO_URI; // Use environment variable for security
+const uri = "mongodb+srv://jarodj98:5b2pGiN66123$@portfoliodb.4ktsy.mongodb.net/?retryWrites=true&w=majority&appName=PortfolioDB";
 let db;
 
 // Create a MongoClient with MongoClientOptions object to set the Stable API version
