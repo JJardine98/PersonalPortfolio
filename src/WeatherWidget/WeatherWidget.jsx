@@ -16,7 +16,7 @@ const WeatherWidget = () => {
   useEffect(() => {
     const fetchWeather = async (lat, lon) => {
       try {
-        const apiKey = process.env.REACT_APP_WEATHER_API_KEY; // Replace with your actual API key
+        const apiKey = 'b8b3fa05ae0555858683cebb58599938'; // Replace with your actual API key
 
         // Fetch current weather
         const weatherResponse = await axios.get(`https://api.openweathermap.org/data/2.5/weather`, {
@@ -50,7 +50,7 @@ const WeatherWidget = () => {
 
     const fetchWeatherByCity = async () => {
       try {
-        const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+        const apiKey = 'b8b3fa05ae0555858683cebb58599938';
 
 
         // Fetch coordinates using the Geocoding API
