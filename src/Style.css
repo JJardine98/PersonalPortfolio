@@ -1,0 +1,748 @@
+/* HomePage.css */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+  }
+  
+  .home {
+    text-align: center;
+  }
+  
+  .hero {
+    background:#5a0606;
+    color: rgb(163, 128, 128);
+    padding: 50px 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensure that any overflowing animations are hidden */
+  }
+  
+  .hero h2 {
+    color:white;
+    font-size:1.5rem;
+  }
+  
+  .hero p {
+    color:white;
+    font-size:1.0rem;
+    
+  }
+  
+  .profile-picture {
+    width:30%;
+    border-radius:50%;
+  
+  }
+  
+  /* Add a media query for smaller screens */
+  @media (max-width: 768px) {
+    .profile-picture {
+      width: 50%;
+    }
+  }
+  
+  
+  .about,
+  .skills,
+  .projects {
+    padding: 80px 0;
+    background-color: #f4f4f4;
+    color: #3a0303;
+  }
+  
+  .about h2,
+  .skills h2,
+  .projects h2 {
+    font-size: 38px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #3a0303;
+  }
+  
+  .about p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .skills ul li {
+    background-color: #3a0303;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    list-style: none; /* Ensure there's no bullet points */
+  }
+  
+  .skills ul li a {
+    color: inherit; /* Inherit the text color from the li */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Make the link fill the entire li area */
+    width: 100%;
+    height: 100%;
+  }
+  
+  .skills ul li:hover {
+    background-color: #970303;
+    transform: translateY(-3px);
+  }
+  
+  
+  .projects .project-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .projects .project-item {
+    background-color: white;
+    padding: 25px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .projects .project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+    .projects .project-link {
+      display: block;
+      padding: 10px 20px;
+      background-color: #3a0303;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+  
+    .projects .project-link:hover {
+      background-color: #970303;
+      color: #ffffff;
+      text-decoration: none;
+    }
+  
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .social-icons {
+    display:flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+  
+  /* Dark Theme */
+  body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  .dark-theme .hero {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  .dark-theme .hero h2,
+  .dark-theme .hero p {
+    color: #e0e0e0;
+  }
+  
+  .dark-theme .about,
+  .dark-theme .skills,
+  .dark-theme .projects {
+    background-color: #181818;
+    color: #e0e0e0;
+  }
+  
+  .dark-theme .about h2,
+  .dark-theme .skills h2,
+  .dark-theme .projects h2 {
+    color: #ffffff;
+  }
+  
+  .dark-theme .skills ul li {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  .dark-theme .skills ul li:hover {
+    background-color: #505050;
+  }
+  
+  .dark-theme .projects .project-item {
+    background-color: #222222;
+    color: #ffffff;
+  }
+  
+  .dark-theme .projects .project-item:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark-theme .projects .project-link {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  .dark-theme .projects .project-link:hover {
+    background-color: #505050;
+  }
+  
+  .dark-theme .social-icons a {
+    color: #ffffff;
+  }
+  
+  select {
+    border-radius:7.5px;
+  }
+
+  /* TaskList.jsx styles */
+
+  .task-list-container {
+    width: 90%; /* Adjust to fit smaller screens */
+    max-width: 800px; /* Maintain max width */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #3a0303;
+    text-align: center;
+  }
+  
+  .task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .task-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-input button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .task-input button:hover {
+    background-color: #970303;
+    color: #fff;
+  }
+  
+  .task-input button:first-child {
+    background-color: #3a0303;
+    color: #fff;
+  }
+  
+  .task-input button:last-child {
+    background-color: #3a0303;
+    color: #fff;
+  }
+  
+  .task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .task-list li.completed {
+    background: #d4edda;
+    text-decoration: line-through;
+  }
+  
+  .task-list li:hover {
+    background: #f8f9fa;
+    transform: scale(1.01);
+  }
+  
+  .task-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .task-controls button {
+    background: #3a0303;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .task-controls button:hover {
+    background: #970303;
+    color: #fff;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.75em;
+    }
+  
+    .task-input {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .task-input button {
+      width: 100%; /* Buttons take full width on small screens */
+      padding: 10px 0; /* Adjust padding */
+    }
+  
+    .task-list li {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align content to the start */
+      padding: 15px; /* Increase padding for more space */
+    }
+  
+    .task-controls {
+      width: 100%; /* Task controls take full width */
+      justify-content: space-between; /* Spread out the buttons */
+    }
+  
+    .task-controls button {
+      flex: 1; /* Buttons take equal width */
+      text-align: center; /* Center text */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    .task-input input {
+      font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+  
+    .task-list li {
+      padding: 10px; /* Slightly reduce padding */
+    }
+  
+    .task-controls button {
+      font-size: 0.85em; /* Reduce button font size */
+      padding: 5px; /* Reduce padding */
+    }
+  }
+  
+
+  /* DateDropdown.jsx styles */
+
+  .date-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    margin-bottom:20px;
+    border-radius:4px;
+    border: 1px solid #ccc;
+  }
+  
+  .date-dropdown-container select,
+  .date-dropdown-container input {
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .date-dropdown-container input[type="date"] {
+    width: 200px;
+  }
+  
+  .date-dropdown-container button {
+    background-color: #3a0303; 
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .date-dropdown-container button:hover {
+    background-color: #970303; 
+  }
+  
+  .add-date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  /* src/components/WeatherWidget.css */
+
+.weather-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  .city-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .weather-card {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  .weather-card h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .weather-card img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .weather-card p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #666;
+  }
+
+  button {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius:10px;
+    margin-bottom:10px;
+    padding:10px;
+    width:10rem;
+    height:3rem;
+  }
+
+  /* src/components/WeatherWidget.css */
+.weather-card {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* src/components/ForecastCard.css */
+.forecast-card {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .forecast-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .forecast-item {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 150px; /* Adjusted width to fit 3 per scroll */
+    text-align: center;
+    flex: 0 0 auto; /* Prevent items from shrinking */
+  }
+  
+  .forecast-item img {
+    width: 60px; /* Adjusted size for better fit */
+    height: 60px;
+  }
+  
+  @media (max-width: 768px) {
+    .forecast-item {
+      width: 150px; /* Adjust width for smaller screens */
+    }
+    
+    .forecast-item img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  /* src/components/WeatherCard.css */
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .weather-card img {
+    width: 100px;
+    height: 100px;
+  }
+  
+
+  /* Dark Theme */ 
+.dark-theme .weather-card, 
+.dark-theme .forecast-card, 
+.dark-theme .forecast-item {
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  color: #f0f0f0;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-theme button {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+  border-radius:10px;
+  margin-bottom:10px;
+  padding:5px;
+}
+.weather-widget.dark-theme {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  }
+
+.dark-theme .city-input {
+  background-color: #333;
+  border: 1px solid #555;
+  color: #f0f0f0;
+}
+
+.dark-theme .error-message {
+  color: #ff6b6b;
+}
+
+.dark-theme .weather-card h2, 
+.dark-theme .forecast-card h2 {
+  color: #f0f0f0;
+}
+
+.dark-theme .weather-card p, 
+.dark-theme .forecast-card p, 
+.dark-theme .forecast-item {
+  color: #ccc;
+}
+
+.dark-theme .forecast-item {
+  background-color: #3c3c3c;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Video Loader CSS */
+
+.video-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ffffff; /* Clean white background for freshness */
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for modern depth */
+  font-family: 'Arial', sans-serif; /* Modern, sans-serif font */
+}
+
+.video-input {
+  padding: 12px 16px;
+  font-size: 16px;
+  width: 320px;
+  border: 1px solid #d1d1d1; /* Subtle gray border */
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background-color: #f9f9f9; /* Light gray background for input */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-input:focus {
+  border-color: #007bff; /* Highlight border color on focus */
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Soft focus ring */
+}
+
+.button-container {
+  display: flex; /* Use flexbox to align buttons horizontally */
+  gap: 10px; /* Space between buttons */
+  margin-bottom: 20px; /* Space between buttons and video player */
+}
+
+.load-button, .clear-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #570101; /* Primary blue background */
+  color: #ffffff; /* White text color */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 0; /* Remove margins to align buttons properly */
+}
+
+.load-button:hover, .clear-button:hover {
+  background-color: #910303; /* Darker blue on hover */
+  transform: scale(1.02); /* Slight scale effect for interaction */
+}
+
+
+.youtube-player {
+  margin-top: 20px;
+  max-width: 640px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow for player */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Video Player CSS */
+.video-player {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: black;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-element {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.play-pause-btn,
+.mute-btn,
+.fullscreen-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.volume-slider {
+  width: 100px;
+}
+
+/* YoutubePlayer.css */
+.youtube-player {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+

@@ -1,6 +1,6 @@
 // src/components/ForecastCard.js
 import React from 'react';
-import './WeatherThemes.css';
+import '../Style.css';
 
 const ForecastCard = ({ data }) => {
   const { list } = data;

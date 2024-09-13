@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import DateDropdown from './DateDropdown';
-import './TaskStyles.css';
+import '../Style.css';
 
 
 const fetchTasks = async (date) => {

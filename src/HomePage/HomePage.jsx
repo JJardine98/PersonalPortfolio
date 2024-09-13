@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './HomePage.css';
+import '../Style.css';
 import { SocialIcon } from 'react-social-icons';
 import 'react-social-icons/github';
 import 'react-social-icons/linkedin';

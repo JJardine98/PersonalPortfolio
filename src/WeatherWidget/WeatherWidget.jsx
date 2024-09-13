@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import WeatherCard from './WeatherCard';
 import ForecastCard from './ForecastCard';
-import './WeatherThemes.css';
+import '../Style.css';
 
 
 
