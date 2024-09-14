@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Task = require('../models/Task');
+const Task = require('../models/task'); // Import Task model
 
-// Task route (tasks.js)
+// Get tasks for a specific date
 router.get('/', async (req, res) => {
-  const { date } = req.query;
-
   try {
+    const { date } = req.query;
     const tasks = await Task.find({ date });
     res.json(tasks);
   } catch (error) {
@@ -14,34 +13,81 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Create a new task
 router.post('/', async (req, res) => {
+  const { text, completed, inProgress, date, dueDate } = req.body;
   try {
-    const newTask = new Task(req.body);
-    await newTask.save();
-    res.status(201).json(newTask);
+    const newTask = new Task({
+      text,
+      completed,
+      inProgress,
+      date,
+      dueDate: new Date(dueDate), // Ensure dueDate is in Date format
+      priority: calculatePriority(dueDate), // Calculate priority based on due date
+    });
+    const savedTask = await newTask.save();
+    res.status(201).json(savedTask);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 });
 
+// Update a task
 router.put('/:id', async (req, res) => {
   try {
-    const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!updatedTask) return res.status(404).json({ message: 'Task not found' });
+    const { text, completed, inProgress, date, dueDate } = req.body;
+    const updatedTask = await Task.findByIdAndUpdate(req.params.id, {
+      text,
+      completed,
+      inProgress,
+      date,
+      dueDate: new Date(dueDate), // Ensure dueDate is in Date format
+      priority: calculatePriority(dueDate), // Calculate priority based on due date
+    }, { new: true });
     res.json(updatedTask);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 });
 
+// Delete a task
 router.delete('/:id', async (req, res) => {
   try {
-    const result = await Task.findByIdAndDelete(req.params.id);
-    if (!result) return res.status(404).json({ message: 'Task not found' });
+    await Task.findByIdAndDelete(req.params.id);
     res.json({ message: 'Task deleted' });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
+
+// Update a task
+router.put('/:id', async (req, res) => {
+  try {
+    const { text, completed, inProgress, date, dueDate } = req.body;
+    const updatedTask = await Task.findByIdAndUpdate(req.params.id, {
+      text,
+      completed,
+      inProgress,
+      date,
+      dueDate: new Date(dueDate), // Ensure dueDate is in Date format
+      priority: calculatePriority(dueDate), // Calculate priority based on due date
+    }, { new: true });
+    res.json(updatedTask);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+// Calculate priority based on due date
+function calculatePriority(dueDate) {
+  if (!dueDate) return 3; // Default to low priority if no due date
+  const now = new Date();
+  const taskDate = new Date(dueDate);
+  const daysUntilDue = Math.ceil((taskDate - now) / (1000 * 60 * 60 * 24));
+  
+  if (daysUntilDue <= 1) return 1; // High priority
+  if (daysUntilDue <= 7) return 2; // Medium priority
+  return 3; // Low priority
+}
 
 module.exports = router;

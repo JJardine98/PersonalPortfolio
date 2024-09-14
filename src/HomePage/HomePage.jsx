@@ -5,6 +5,8 @@ import 'react-social-icons/github';
 import 'react-social-icons/linkedin';
 import 'react-social-icons/email';
 import {ThemeContext} from '../ThemeProvider';
+import profilePic from '../profile.jpg'
+
 const HomePage = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -18,7 +20,7 @@ const HomePage = () => {
       <section className="hero">
         <div className="container">
           <h2>Hello, I'm Jarod Jardine</h2>
-          <img src={"/images/profile.jpg"} alt="Profile" className="profile-picture" />
+          <img src={profilePic} alt="Profile" className="profile-picture" />
           <p>Full Stack Developer</p>
         </div>
         <div className="container">

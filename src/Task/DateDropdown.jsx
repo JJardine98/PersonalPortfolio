@@ -78,6 +78,7 @@ const DateDropdown = ({ onDateChange }) => {
 
   return (
     <div className="date-dropdown-container">
+      <h3>Select a Date</h3>
       <select
         className="date-dropdown"
         value={selectedDate}
@@ -90,6 +91,7 @@ const DateDropdown = ({ onDateChange }) => {
         ))}
       </select>
       <div className="add-date-container">
+        <h3>Add a Date</h3>
         <input
           type="date"
           value={newDate}
