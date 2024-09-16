@@ -1,6 +1,6 @@
 import React from "react";
 import YouTube from "react-youtube";
-import "../Style.css";
+import "../CSS/MainStyle.css";
 
 const YouTubePlayer = ({ videoId }) => {
   const onReady = (event) => {

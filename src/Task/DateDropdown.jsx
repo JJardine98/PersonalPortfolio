@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import './TaskStyle.css';
+import '../CSS/MainStyle.css';
 
 const fetchDates = async () => {
   const response = await fetch('http://localhost:5000/dates');

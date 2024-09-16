@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import YouTubePlayer from './YoutubePlayer';
-import '../Style.css';
+import "../CSS/MainStyle.css";
 
 const VideoLoader = () => {
   const { videoId: paramVideoId } = useParams();

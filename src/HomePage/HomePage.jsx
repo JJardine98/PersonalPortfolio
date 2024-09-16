@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import '../Style.css';
+import '../CSS/MainStyle.css';
 import { SocialIcon } from 'react-social-icons';
 import 'react-social-icons/github';
 import 'react-social-icons/linkedin';

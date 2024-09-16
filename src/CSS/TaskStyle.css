@@ -63,7 +63,7 @@
   
   .task-list li.completed {
     background: #d4edda;
-    text-decoration: line-through;
+    
   }
   
   .task-list li:hover {
@@ -245,7 +245,7 @@
   }
   
   .dark .task-input button:hover {
-    background-color: #e74c3c; /* Darker hover effect */
+    background-color: #505050; /* Darker hover effect */
     color: #fff;
   }
   
@@ -257,6 +257,25 @@
   .dark .task-list {
     list-style-type: none;
     padding: 0;
+  }
+
+  .dark select { 
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #555; /* Darker border */
+    background-color: #2c2c2c; /* Dark input background */
+    color: #f1f1f1; /* Light text */
+  }
+
+  .dark ul select {
+    font-size: 12px;
+    margin: 10px;
+    border-radius: 4px;
+    border: 1px solid #555; /* Darker border */
+    background-color: #2c2c2c; /* Dark input background */
+    color: #f1f1f1; /* Light text */
   }
   
   .dark .task-list li {
@@ -273,7 +292,6 @@
   
   .dark .task-list li.completed {
     background: #27ae60; /* Completed task green */
-    text-decoration: line-through;
   }
   
   .dark .task-list li:hover {
@@ -287,7 +305,7 @@
   }
   
   .dark .task-input button {
-    background: #e67e22; /* Highlight button */
+    background: #333333; /* Highlight button */
     border: 1px solid #555;
     border-radius: 5px;
     padding: 5px;
@@ -299,7 +317,7 @@
   }
   
   .dark .task-controls button {
-    background: #f39c12; /* Highlight control buttons */
+    background: #333333; /* Highlight control buttons */
     border: 1px solid #555;
     border-radius: 5px;
     padding: 5px;
@@ -311,7 +329,7 @@
   }
   
   .dark .task-controls button:hover {
-    background: #e74c3c; /* Darker hover effect */
+    background: #505050; /* Darker hover effect */
     color: #fff;
   }
   
@@ -397,7 +415,7 @@
   }
   
   .dark .date-dropdown-container button {
-    background-color: #e67e22; /* Highlight button color */
+    background-color: #333333; /* Highlight button color */
     color: white;
     padding: 10px 20px;
     margin: 10px 0;
@@ -409,7 +427,7 @@
   }
   
   .dark .date-dropdown-container button:hover {
-    background-color: #e74c3c; /* Darker hover effect */
+    background-color: #505050; /* Darker hover effect */
   }
   
   .dark .add-date-container {

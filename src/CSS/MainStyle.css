@@ -420,90 +420,93 @@ body.dark {
 
 /* Video Loader CSS */
 .dark .video-loader {
-  background-color:#838383;
+  background-color: #2e2e2e; /* Darker background for dark mode */
 }
 
 .video-loader {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20vh;
-  background-color: #ffffff; /* Clean white background for freshness */
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for modern depth */
-  font-family: 'Arial', sans-serif; /* Modern, sans-serif font */
+  justify-content: center;
+  height: 80vh;
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 12px; /* Subtle border radius for smooth edges */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  padding: 20px; /* Padding for spacing */
 }
 
 .video-input {
-  padding: 12px 16px;
-  font-size: 16px;
-  width: 320px;
-  border: 1px solid #d1d1d1; /* Subtle gray border */
+  padding: 14px 18px;
+  font-size: 18px;
+  width: 100%;
+  max-width: 360px;
+  border: 1px solid #d1d1d1; /* Subtle border */
   border-radius: 8px;
-  margin-bottom: 16px;
-  background-color: #f9f9f9; /* Light gray background for input */
+  margin-bottom: 20px;
+  background-color: #f1f1f1; /* Light gray background */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-input:focus {
-  border-color: #007bff; /* Highlight border color on focus */
+  border-color: #0056b3; /* Highlight border color on focus */
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Soft focus ring */
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.25); /* Focus ring */
 }
 
 .button-container {
-  display: flex; /* Use flexbox to align buttons horizontally */
-  gap: 10px; /* Space between buttons */
-  margin-bottom: 20px; /* Space between buttons and video player */
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .load-button, .clear-button {
-  padding: 12px 20px;
-  font-size: 16px;
+  padding: 14px 24px;
+  font-size: 18px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #570101; /* Primary blue background */
+  background-color: #007bff; /* Primary blue background */
   color: #ffffff; /* White text color */
   transition: background-color 0.3s ease, transform 0.3s ease;
-  margin: 0; /* Remove margins to align buttons properly */
 }
 
 .load-button:hover, .clear-button:hover {
-  background-color: #910303; /* Darker blue on hover */
-  transform: scale(1.02); /* Slight scale effect for interaction */
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale effect */
 }
 
-.dark .load-button:hover, .clear-button:hover {
-  background-color: #4c4c4c;
+.dark .load-button:hover, .dark .clear-button:hover {
+  background-color: #444;
   color: #ffffff;
 }
 
-
 .youtube-player {
-  margin-top: 20px;
-  max-width: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow for player */
-  border-radius: 12px;
-  overflow: hidden;
+  max-width: 800px; /* Maximum width of the player */
+  margin: 20px auto; /* Center the player horizontally and add margin on top and bottom */
+  border-radius: 12px; /* Consistent border radius */
+  overflow: hidden; /* Hide overflow */
 }
+
 
 /* Video Player CSS */
 .video-player {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
   margin: auto;
-  background-color: black;
-  border-radius: 8px;
-  overflow: hidden;
+  background-color: black; /* Dark background for player */
+  border-radius: 12px; /* Subtle border radius */
+  overflow: hidden; /* Hide overflow */
 }
 
 .video-element {
   width: 100%;
   height: auto;
-  cursor: pointer;
+  display: block; /* Ensure video takes full width */
 }
 
 .controls {
@@ -513,9 +516,10 @@ body.dark {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8); /* Darker background */
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Subtle top border */
 }
 
 .play-pause-btn,
@@ -523,15 +527,25 @@ body.dark {
 .fullscreen-btn {
   background: none;
   border: none;
-  color: white;
-  font-size: 16px;
+  color: #fff;
+  font-size: 18px;
   cursor: pointer;
-  padding: 5px;
+  padding: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.play-pause-btn:hover,
+.mute-btn:hover,
+.fullscreen-btn:hover {
+  color: #ff9800; /* Accent color on hover */
+  transform: scale(1.1); /* Slight scale effect */
 }
 
 .volume-slider {
-  width: 100px;
+  width: 120px; /* Adjusted width for better usability */
 }
+
+
 
 /* YoutubePlayer.css */
 .youtube-player {

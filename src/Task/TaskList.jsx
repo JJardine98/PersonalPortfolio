@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import DateDropdown from './DateDropdown';
-import './TaskStyle.css';
+import '../CSS/TaskStyle.css';
 
 const fetchTasks = async (date) => {
   const response = await fetch(`http://localhost:5000/tasks?date=${date}`);
@@ -11,11 +11,11 @@ const fetchTasks = async (date) => {
 
 const TaskList = () => {
   const [taskText, setTaskText] = React.useState('');
-  const [dueDate, setDueDate] = React.useState(''); // New state for due date
+  const [priority, setPriority] = React.useState(3); // New state for priority (default to Low)
   const [selectedDate, setSelectedDate] = React.useState(new Date().toISOString().split('T')[0]);
   const [editingTaskId, setEditingTaskId] = React.useState(null);
   const [editTaskText, setEditTaskText] = React.useState('');
-  const [editDueDate, setEditDueDate] = React.useState('');
+  const [editPriority, setEditPriority] = React.useState(3);
 
   const queryClient = useQueryClient();
 
@@ -47,6 +47,7 @@ const TaskList = () => {
   );
 
   const handleInputChange = (e) => setTaskText(e.target.value);
+  const handlePriorityChange = (e) => setPriority(parseInt(e.target.value));
 
   const addTask = async () => {
     if (taskText.trim()) {
@@ -55,13 +56,13 @@ const TaskList = () => {
         completed: false,
         inProgress: false,
         date: selectedDate,
-        dueDate: dueDate, // Add due date here
+        priority: priority, // Use priority instead of dueDate
       };
 
       try {
         await addTaskMutation.mutateAsync(newTask);
         setTaskText('');
-        setDueDate(''); // Clear due date after adding
+        setPriority(3); // Reset priority after adding
       } catch (error) {
         console.error('Error adding task:', error.message);
       }
@@ -102,25 +103,30 @@ const TaskList = () => {
   const startEditing = (task) => {
     setEditingTaskId(task._id);
     setEditTaskText(task.text);
-    setEditDueDate(task.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : '');
+    setEditPriority(task.priority);
   };
 
   const handleEditSave = async () => {
-    if (editTaskText.trim()) {
-      const updatedTask = {
-        _id: editingTaskId,
-        text: editTaskText,
-        completed: false, // Or maintain existing state
-        inProgress: false, // Or maintain existing state
-        date: selectedDate,
-        dueDate: editDueDate,
-      };
-
-      try {
-        await updateTaskMutation.mutateAsync(updatedTask);
-      } catch (error) {
-        console.error('Error updating task:', error.message);
-      }
+    if (!editTaskText.trim()) {
+      console.error('Task text is required');
+      return;
+    }
+  
+    const updatedTask = {
+      _id: editingTaskId,  // Ensure this is valid
+      text: editTaskText,
+      completed: false,  // Adjust based on your state
+      inProgress: false,  // Adjust based on your state
+      date: selectedDate,  // Ensure it's valid
+      priority: editPriority,
+    };
+  
+    console.log('Sending updated task:', updatedTask);
+  
+    try {
+      await updateTaskMutation.mutateAsync(updatedTask);
+    } catch (error) {
+      console.error('Error updating task:', error.message);
     }
   };
 
@@ -128,9 +134,14 @@ const TaskList = () => {
     setEditingTaskId(null);
   };
 
-  const todoTasks = tasks.filter(task => !task.completed && !task.inProgress);
-  const inProgressTasks = tasks.filter(task => task.inProgress && !task.completed);
-  const completedTasks = tasks.filter(task => task.completed);
+  const sortByPriority = (tasks) => {
+    return [...tasks].sort((a, b) => a.priority - b.priority);
+  };
+
+  // Split tasks into sections
+  const todoTasks = sortByPriority(tasks.filter(task => !task.completed && !task.inProgress));
+  const inProgressTasks = sortByPriority(tasks.filter(task => task.inProgress && !task.completed));
+  const completedTasks = sortByPriority(tasks.filter(task => task.completed));
 
   if (tasksLoading) return <div>Loading...</div>;
   if (tasksError) return <div>Error: {tasksError.message}</div>;
@@ -145,15 +156,15 @@ const TaskList = () => {
           onChange={handleInputChange}
           placeholder="Enter a new task..."
         />
-        <input
-          type="date"
-          value={dueDate}
-          onChange={(e) => setDueDate(e.target.value)}
-        />
+        <select value={priority} onChange={handlePriorityChange}>
+          <option value={1}>High</option>
+          <option value={2}>Medium</option>
+          <option value={3}>Low</option>
+        </select>
         <button onClick={addTask}>Add Task</button>
         <button onClick={() => {
           setTaskText('');
-          setDueDate(''); // Clear due date when clearing input
+          setPriority(3); // Reset priority when clearing input
         }}>Clear</button>
       </div>
 
@@ -169,11 +180,11 @@ const TaskList = () => {
                   value={editTaskText}
                   onChange={(e) => setEditTaskText(e.target.value)}
                 />
-                <input
-                  type="date"
-                  value={editDueDate}
-                  onChange={(e) => setEditDueDate(e.target.value)}
-                />
+                <select value={editPriority} onChange={(e) => setEditPriority(parseInt(e.target.value))}>
+                  <option value={1}>High</option>
+                  <option value={2}>Medium</option>
+                  <option value={3}>Low</option>
+                </select>
                 <button onClick={handleEditSave}>Save</button>
                 <button onClick={handleEditCancel}>Cancel</button>
               </div>
@@ -208,11 +219,11 @@ const TaskList = () => {
                   value={editTaskText}
                   onChange={(e) => setEditTaskText(e.target.value)}
                 />
-                <input
-                  type="date"
-                  value={editDueDate}
-                  onChange={(e) => setEditDueDate(e.target.value)}
-                />
+                <select value={editPriority} onChange={(e) => setEditPriority(parseInt(e.target.value))}>
+                  <option value={1}>High</option>
+                  <option value={2}>Medium</option>
+                  <option value={3}>Low</option>
+                </select>
                 <button onClick={handleEditSave}>Save</button>
                 <button onClick={handleEditCancel}>Cancel</button>
               </div>
@@ -239,7 +250,7 @@ const TaskList = () => {
       <h3>Completed</h3>
       <ul className="task-list">
         {completedTasks.map((task) => (
-          <li key={task._id} className="completed">
+          <li key={task._id}>
             {editingTaskId === task._id ? (
               <div>
                 <input
@@ -247,11 +258,11 @@ const TaskList = () => {
                   value={editTaskText}
                   onChange={(e) => setEditTaskText(e.target.value)}
                 />
-                <input
-                  type="date"
-                  value={editDueDate}
-                  onChange={(e) => setEditDueDate(e.target.value)}
-                />
+                <select value={editPriority} onChange={(e) => setEditPriority(parseInt(e.target.value))}>
+                  <option value={1}>High</option>
+                  <option value={2}>Medium</option>
+                  <option value={3}>Low</option>
+                </select>
                 <button onClick={handleEditSave}>Save</button>
                 <button onClick={handleEditCancel}>Cancel</button>
               </div>
