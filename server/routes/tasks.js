@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Task = require('./models/task'); // Import Task model
+const Task = require('../models/Task'); // Import Task model
 
 // Get tasks for a specific date
 router.get('/', async (req, res) => {
