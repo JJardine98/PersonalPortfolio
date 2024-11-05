@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/jarodtools/static/css/main.9dea1859.css",
-    "main.js": "/jarodtools/static/js/main.985807fd.js",
+    "main.css": "/jarodtools/static/css/main.72990a0d.css",
+    "main.js": "/jarodtools/static/js/main.8f04c556.js",
     "static/js/453.08788d81.chunk.js": "/jarodtools/static/js/453.08788d81.chunk.js",
+    "static/media/profile.jpg": "/jarodtools/static/media/profile.8218de078ac11219c910.jpg",
     "index.html": "/jarodtools/index.html",
-    "main.9dea1859.css.map": "/jarodtools/static/css/main.9dea1859.css.map",
-    "main.985807fd.js.map": "/jarodtools/static/js/main.985807fd.js.map",
+    "main.72990a0d.css.map": "/jarodtools/static/css/main.72990a0d.css.map",
+    "main.8f04c556.js.map": "/jarodtools/static/js/main.8f04c556.js.map",
     "453.08788d81.chunk.js.map": "/jarodtools/static/js/453.08788d81.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9dea1859.css",
-    "static/js/main.985807fd.js"
+    "static/css/main.72990a0d.css",
+    "static/js/main.8f04c556.js"
   ]
 }
