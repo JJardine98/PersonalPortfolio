@@ -77,7 +77,7 @@ const HomePage = () => {
               <h3>Weather Widget</h3>
               <p>A Weather Widget type application that uses 3rd party API to fetch current weather and forecast data for a given city.</p>
               <p>The API also allows the use of Geolocation!</p>
-              <<Link to="/weather" className="project-link">Interactive Task List</Link>
+              <Link to="/weather" className="project-link">Interactive Task List</Link>
             </div>
             <div className="project-item">
               <h3>Youtube Video Player</h3>
