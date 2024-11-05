@@ -6,6 +6,7 @@ import 'react-social-icons/linkedin';
 import 'react-social-icons/email';
 import {ThemeContext} from '../ThemeProvider';
 import profilePic from '../profile.jpg'
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -76,20 +77,20 @@ const HomePage = () => {
               <h3>Weather Widget</h3>
               <p>A Weather Widget type application that uses 3rd party API to fetch current weather and forecast data for a given city.</p>
               <p>The API also allows the use of Geolocation!</p>
-              <a href="/jarodtools/weather" className="project-link">View the Weather Widget</a>
+              <<Link to="/weather" className="project-link">Interactive Task List</Link>
             </div>
             <div className="project-item">
               <h3>Youtube Video Player</h3>
               <p>This Youtube Player uses a combination of React Youtube, React Routes and REGEX to take a user inputted Youtube link and extract the video ID</p>
               <p>It then uses that ID to play the video using the YoutubePlayer component.</p>
-              <a href="/jarodtools/video" className="project-link">View the Youtube Video Player</a>
+              <Link to="/video" className="project-link">Interactive Task List</Link>
             </div>
             <div className="project-item">
               <h3>Interactive Task List</h3>
               <p>A simple task list that is full stack using MERN. (MongoDB, Express, React, Node.js) It uses 3 out of 4 of the standard CRUD functions (Create, Read & Delete) to add, view and delete tasks.</p>
               <p>It also uses a date dropdown to filter tasks by date.</p>
               <p>The API for the DateDropdown and TaskList are integrated to work together. The DateDropdown uses the API to fetch the dates and the TaskList uses the API to fetch the tasks for the selected date.</p>
-              <a href="/jarodtools/task" className="project-link">Interactive Task List</a>
+              <Link to="/task" className="project-link">Interactive Task List</Link>
             </div>
             <div className="project-item">
               <h3>Calculator</h3>
