@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
-      <Router>
+      <Router basename="/jarodtools">
         <div className="app">
           <div className="content">
             <Routes>
