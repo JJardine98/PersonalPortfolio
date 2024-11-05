@@ -21,11 +21,11 @@ const App = () => (
           <div className="content">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/weather" element={<WeatherWidget />} />
-              <Route path="/video" element={<VideoLoader />} />
-              <Route path="/video/:videoId" element={<VideoLoader />} />
-              <Route path="/task" element={<TaskList />} />
-              <Route path="/calc" element={<Calculator />} />
+              <Route path="/jarodtools/weather" element={<WeatherWidget />} />
+              <Route path="/jarodtools/video" element={<VideoLoader />} />
+              <Route path="/jarodtools/video/:videoId" element={<VideoLoader />} />
+              <Route path="/jarodtools/task" element={<TaskList />} />
+              <Route path="/jarodtools/calc" element={<Calculator />} />
             </Routes>
           </div>
         </div>
