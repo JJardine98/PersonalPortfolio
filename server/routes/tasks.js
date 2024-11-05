@@ -32,23 +32,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update a task
-router.put('/:id', async (req, res) => {
-  try {
-    const { text, completed, inProgress, date, dueDate } = req.body;
-    const updatedTask = await Task.findByIdAndUpdate(req.params.id, {
-      text,
-      completed,
-      inProgress,
-      date,
-      dueDate: new Date(dueDate), // Ensure dueDate is in Date format
-      priority: calculatePriority(dueDate), // Calculate priority based on due date
-    }, { new: true });
-    res.json(updatedTask);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
+
 
 // Delete a task
 router.delete('/:id', async (req, res) => {
