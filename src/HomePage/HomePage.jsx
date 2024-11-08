@@ -48,7 +48,7 @@ const HomePage = () => {
         </div>
       </section>
 
-     <section className="aboutme">
+     <section className="skills">
        <div className="container">
         <h2>About Me</h2>
         <ul>
