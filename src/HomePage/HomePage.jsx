@@ -48,15 +48,6 @@ const HomePage = () => {
         </div>
       </section>
 
-     <section className="skills">
-       <div className="container">
-        <h2>About Me</h2>
-        <ul>
-          <li></li>
-        </ul>
-        </div>
-     </section>
-
       <section className="skills">
         <div className="container">
           <h2>Skills & Technologies</h2>
