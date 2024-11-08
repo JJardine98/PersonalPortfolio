@@ -77,13 +77,13 @@ const HomePage = () => {
               <h3>Weather Widget</h3>
               <p>A Weather Widget type application that uses 3rd party API to fetch current weather and forecast data for a given city.</p>
               <p>The API also allows the use of Geolocation!</p>
-              <Link to="/weather" className="project-link">Interactive Task List</Link>
+              <Link to="/weather" className="project-link">Weather Widget</Link>
             </div>
             <div className="project-item">
               <h3>Youtube Video Player</h3>
               <p>This Youtube Player uses a combination of React Youtube, React Routes and REGEX to take a user inputted Youtube link and extract the video ID</p>
               <p>It then uses that ID to play the video using the YoutubePlayer component.</p>
-              <Link to="/video" className="project-link">Interactive Task List</Link>
+              <Link to="/video" className="project-link">Youtube Video Player</Link>
             </div>
             <div className="project-item">
               <h3>Interactive Task List</h3>
@@ -93,9 +93,15 @@ const HomePage = () => {
               <Link to="/task" className="project-link">Interactive Task List</Link>
             </div>
             <div className="project-item">
-              <h3>Calculator</h3>
-              <p>Simple calculator app built with React.</p>
-              <a href="/jarodtools/calculator" className="project-link">Calculator</a>
+              <h3>Retail System Mockup</h3>
+              <p>A project done for my Systems Analysis and Design class where instead of making static wireframes, I created a website to show a "tech-demo" of a Retail System.</p>
+              <a href="https://jjardine98.github.io/Wireframes/" target="_blank" rel="noopener noreferrer">Retail System Mockup</a>
+            </div>
+            <div className="project-item">
+              <h3>Quiz / Flashcard App</h3>
+              <p>A simple Quiz and Flashcard app I created to help my girlfriend study for her Labratory Tech National Exam. It uses JSON files for the quizzes allowing any number of questions to be added.</p>
+              <p>You can also view the grades of the quizzes you have taken (stored in local storage).</p>
+              <a href="https://jjardine98.github.io/SuzannesStudyTools/" target="_blank" rel="noopener noreferrer">Quiz / Flashcard App</a>
             </div>
             {/* Add more projects as needed */}
           </div>
