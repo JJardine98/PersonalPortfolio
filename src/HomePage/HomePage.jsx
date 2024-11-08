@@ -85,13 +85,19 @@ const HomePage = () => {
               <p>It then uses that ID to play the video using the YoutubePlayer component.</p>
               <Link to="/video" className="project-link">Youtube Video Player</Link>
             </div>
+           {/*
             <div className="project-item">
               <h3>Interactive Task List</h3>
               <p>A simple task list that is full stack using MERN. (MongoDB, Express, React, Node.js) It uses 3 out of 4 of the standard CRUD functions (Create, Read & Delete) to add, view and delete tasks.</p>
               <p>It also uses a date dropdown to filter tasks by date.</p>
               <p>The API for the DateDropdown and TaskList are integrated to work together. The DateDropdown uses the API to fetch the dates and the TaskList uses the API to fetch the tasks for the selected date.</p>
               <Link to="/task" className="project-link">Interactive Task List</Link>
-            </div>
+            </div> 
+            
+              This is commented out because I don't feel like hosting the back-end just for 1 project. The rest of them either use API calls or don't need a backend!
+              If I wanted to actually display this on my portfolio I would need to host the backend using some sort of service, then connect all the API calls to the hosted backend.
+
+            */}
             <div className="project-item">
               <h3>Retail System Mockup</h3>
               <p>A project done for my Systems Analysis and Design class where instead of making static wireframes, I created a website to show a "tech-demo" of a Retail System.</p>
