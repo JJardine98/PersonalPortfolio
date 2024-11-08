@@ -95,13 +95,13 @@ const HomePage = () => {
             <div className="project-item">
               <h3>Retail System Mockup</h3>
               <p>A project done for my Systems Analysis and Design class where instead of making static wireframes, I created a website to show a "tech-demo" of a Retail System.</p>
-              <a href="https://jjardine98.github.io/Wireframes/" target="_blank" rel="noopener noreferrer">Retail System Mockup</a>
+              <a href="https://jjardine98.github.io/Wireframes/" target="_blank" rel="noopener noreferrer" className = "project-link">Retail System Mockup</a>
             </div>
             <div className="project-item">
               <h3>Quiz / Flashcard App</h3>
               <p>A simple Quiz and Flashcard app I created to help my girlfriend study for her Labratory Tech National Exam. It uses JSON files for the quizzes allowing any number of questions to be added.</p>
               <p>You can also view the grades of the quizzes you have taken (stored in local storage).</p>
-              <a href="https://jjardine98.github.io/SuzannesStudyTools/" target="_blank" rel="noopener noreferrer">Quiz / Flashcard App</a>
+              <a href="https://jjardine98.github.io/SuzannesStudyTools/" target="_blank" rel="noopener noreferrer" className= "project-link">Quiz / Flashcard App</a>
             </div>
             {/* Add more projects as needed */}
           </div>
