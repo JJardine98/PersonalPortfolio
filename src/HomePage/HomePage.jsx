@@ -98,6 +98,13 @@ const HomePage = () => {
               If I wanted to actually display this on my portfolio I would need to host the backend using some sort of service, then connect all the API calls to the hosted backend.
 
             */}
+
+              <div className="project-item">
+              <h3>Netherlands Informational Website</h3>
+              <p>A multi page website created for my Responsive Web Design Course. It uses Bootstrap & AwesomeFont along with HTML/CSS/JS</p>
+              <a href="https://jjardine98.github.io/Netherlands/" target="_blank" rel="noopener noreferrer" className = "project-link">Retail System Mockup</a>
+            </div>
+
             <div className="project-item">
               <h3>Retail System Mockup</h3>
               <p>A project done for my Systems Analysis and Design class where instead of making static wireframes, I created a website to show a "tech-demo" of a Retail System.</p>
