@@ -48,8 +48,6 @@ const HomePage = () => {
         </div>
       </section>
 
-     
-
       <section className="skills">
         <div className="container">
           <h2>Skills & Technologies</h2>
@@ -62,6 +60,8 @@ const HomePage = () => {
             <li><a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">Git & GitHub</a></li>
             <li><a href="https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer">Responsive Design</a></li>
             <li><a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener noreferrer">C#</a></li>
+            <li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">Java</a></li>
+            <li><a href="https://www.php.net/" target="_blank" rel="noopener noreferrer">PHP</a></li>
             <li><a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">SQL</a></li>
             <li><a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer">MongoDB</a></li>
             <li><a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">Express</a></li>
