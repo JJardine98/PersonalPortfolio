@@ -102,7 +102,7 @@ const HomePage = () => {
               <div className="project-item">
               <h3>Netherlands Informational Website</h3>
               <p>A multi page website created for my Responsive Web Design Course. It uses Bootstrap & AwesomeFont along with HTML/CSS/JS</p>
-              <a href="https://jjardine98.github.io/Netherlands/" target="_blank" rel="noopener noreferrer" className = "project-link">Retail System Mockup</a>
+              <a href="https://jjardine98.github.io/NetherlandsWebsite/" target="_blank" rel="noopener noreferrer" className = "project-link">Retail System Mockup</a>
             </div>
 
             <div className="project-item">
