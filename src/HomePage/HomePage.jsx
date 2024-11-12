@@ -101,7 +101,8 @@ const HomePage = () => {
 
               <div className="project-item">
               <h3>Netherlands Informational Website</h3>
-              <p>A multi page website created for my Responsive Web Design Course. It uses Bootstrap & AwesomeFont along with HTML/CSS/JS</p>
+              <p>A multi page informational website created for my Responsive Web Design Course.</p>
+              <p>It uses Bootstrap, i18n (Internationalization), AOS (Animate On Scroll) and other modern web technologies.</p>
               <a href="https://jjardine98.github.io/NetherlandsWebsite/" target="_blank" rel="noopener noreferrer" className = "project-link">Netherlands Informational Website</a>
             </div>
 
