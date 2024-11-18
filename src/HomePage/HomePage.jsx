@@ -26,6 +26,11 @@ const HomePage = () => {
         </div>
         <div className="container">
           <p>
+            Programmer Analyst - New Brunswick Community College - Saint John Campus 2023-2025 - Graduating Date: June 2025
+          </p>
+        </div>
+        <div className="container">
+          <p>
             I specialize in MERN (MongoDB, Express, React, Node.js) stack development. Passionate about creative user-friendly, responsive and visually appealing web applications, I am always looking for ways to expand my skills as a web/software developer.
           </p>
         </div>
@@ -68,6 +73,40 @@ const HomePage = () => {
           </ul>
         </div>
       </section>
+
+          
+      <section className="skills">
+  <div className="container">
+    <h2>Relevant Coursework</h2>
+    <ul>
+            <li>System Analysis & Design</li>
+            <li>PHP</li>
+            <li>Data Retreival & Visualization</li>
+            <li>Entrepreneurship: Ideation & Strategies</li>
+            <li>Java Programming</li>
+            <li>Advanced Java Programming</li>
+            <li>Object-Oriented Programming</li>
+            <li>Database Design</li>
+            <li>Database Programming</li>
+            <li>Intro SQL</li>
+            <li>Advanced SQL</li>
+            <li>Quality Assurance Testing</li>
+            <li>JavaScript</li>
+            <li>Advanced JavaScript</li>
+            <li>Systems I: Hardware</li>
+            <li>Object Oriented Analysis & Design</li>
+            <li>Project Management</li>
+            <li>User Interface Design</li>
+            <li>C#</li>
+            <li>Web Design (HTML / CSS)</li>
+            <li>Responsive Web Design</li>
+            <li>Computer Math & Statistics</li>
+            <li>Development Tools</li>
+          </ul>
+        </div>
+      </section>
+          
+
 
       <section className="projects" id="projects">
         <div className="container">
