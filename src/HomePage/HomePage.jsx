@@ -111,6 +111,20 @@ const HomePage = () => {
               <p>A project done for my Systems Analysis and Design class where instead of making static wireframes, I created a website to show a "tech-demo" of a Retail System.</p>
               <a href="https://jjardine98.github.io/Wireframes/" target="_blank" rel="noopener noreferrer" className = "project-link">Retail System Mockup</a>
             </div>
+
+            <div className="project-item">
+              <h3>User Stories - Retail System</h3>
+              <p>The user stories that accompanied my Retail System Mockup project.</p>
+              <a href="https://jjardine98.github.io/UserStories/" target="_blank" rel="noopener noreferrer" className = "project-link">User Stories - Retail System</a>
+            </div>
+
+            <div className="project-item">
+              <h3>Use Cases - Retail System</h3>
+              <p>The use cases that accompanied my Retail System Mockup project.</p>
+              <a href="https://jjardine98.github.io/UseCases/" target="_blank" rel="noopener noreferrer" className = "project-link">Use Cases - Retail System</a>
+            </div>
+
+
             <div className="project-item">
               <h3>Quiz / Flashcard App</h3>
               <p>A simple Quiz and Flashcard app I created to help my girlfriend study for her Labratory Tech National Exam. It uses JSON files for the quizzes allowing any number of questions to be added.</p>
