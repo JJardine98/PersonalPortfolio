@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/jarodtools/static/css/main.0a378fd0.css",
-    "main.js": "/jarodtools/static/js/main.efb66ff8.js",
+    "main.css": "/jarodtools/static/css/main.319a9c19.css",
+    "main.js": "/jarodtools/static/js/main.76fd935f.js",
     "static/js/453.08788d81.chunk.js": "/jarodtools/static/js/453.08788d81.chunk.js",
     "static/media/profile.jpg": "/jarodtools/static/media/profile.8218de078ac11219c910.jpg",
     "index.html": "/jarodtools/index.html",
-    "main.0a378fd0.css.map": "/jarodtools/static/css/main.0a378fd0.css.map",
-    "main.efb66ff8.js.map": "/jarodtools/static/js/main.efb66ff8.js.map",
+    "main.319a9c19.css.map": "/jarodtools/static/css/main.319a9c19.css.map",
+    "main.76fd935f.js.map": "/jarodtools/static/js/main.76fd935f.js.map",
     "453.08788d81.chunk.js.map": "/jarodtools/static/js/453.08788d81.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a378fd0.css",
-    "static/js/main.efb66ff8.js"
+    "static/css/main.319a9c19.css",
+    "static/js/main.76fd935f.js"
   ]
 }
