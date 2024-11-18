@@ -109,18 +109,21 @@ const HomePage = () => {
             <div className="project-item">
               <h3>Retail System Mockup</h3>
               <p>A project done for my Systems Analysis and Design class where instead of making static wireframes, I created a website to show a "tech-demo" of a Retail System.</p>
+              <p>It covers all the User Stories and Use Cases listed below.</p>
               <a href="https://jjardine98.github.io/Wireframes/" target="_blank" rel="noopener noreferrer" className = "project-link">Retail System Mockup</a>
             </div>
 
             <div className="project-item">
               <h3>User Stories - Retail System</h3>
               <p>The user stories that accompanied my Retail System Mockup project.</p>
+              <p>User Stories are an important part of the development process as they help to define the requirements and goals of the project.</p>
               <a href="https://jjardine98.github.io/UserStories/" target="_blank" rel="noopener noreferrer" className = "project-link">User Stories - Retail System</a>
             </div>
 
             <div className="project-item">
               <h3>Use Cases - Retail System</h3>
               <p>The use cases that accompanied my Retail System Mockup project.</p>
+              <p>Use Cases are a way to describe the interactions between the system and the users.</p>
               <a href="https://jjardine98.github.io/UseCases/" target="_blank" rel="noopener noreferrer" className = "project-link">Use Cases - Retail System</a>
             </div>
 
