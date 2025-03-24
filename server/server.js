@@ -15,8 +15,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// MongoDB connection setup using Mongoose
-const uri = process.env.MONGODB_URI || "mongodb+srv://jarodj98:5b2pGiN66123$@portfoliodb.4ktsy.mongodb.net/?retryWrites=true&w=majority&appName=PortfolioDB";
+
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
