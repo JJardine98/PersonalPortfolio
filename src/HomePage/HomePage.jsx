@@ -54,58 +54,47 @@ const HomePage = () => {
       </section>
 
       <section className="skills">
-        <div className="container">
-          <h2>Skills & Technologies</h2>
-          <ul>
-            <li><a href="https://developer.mozilla.org/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML5</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS3</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript (ES6+)</a></li>
-            <li><a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a></li>
-            <li><a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">Node.js</a></li>
-            <li><a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">Git & GitHub</a></li>
-            <li><a href="https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer">Responsive Design</a></li>
-            <li><a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener noreferrer">C#</a></li>
-            <li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">Java</a></li>
-            <li><a href="https://www.php.net/" target="_blank" rel="noopener noreferrer">PHP</a></li>
-            <li><a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">SQL</a></li>
-            <li><a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer">MongoDB</a></li>
-            <li><a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">Express</a></li>
-          </ul>
-        </div>
-      </section>
-
-          
-      <section className="skills">
   <div className="container">
-    <h2>Relevant Coursework</h2>
+    <h2>Skills & Technologies</h2>
+
+    <h3>Programming Languages</h3>
     <ul>
-            <li>System Analysis & Design</li>
-            <li>PHP</li>
-            <li>Data Retreival & Visualization</li>
-            <li>Entrepreneurship: Ideation & Strategies</li>
-            <li>Java Programming</li>
-            <li>Advanced Java Programming</li>
-            <li>Object-Oriented Programming</li>
-            <li>Database Design</li>
-            <li>Database Programming</li>
-            <li>Intro SQL</li>
-            <li>Advanced SQL</li>
-            <li>Quality Assurance Testing</li>
-            <li>JavaScript</li>
-            <li>Advanced JavaScript</li>
-            <li>Systems I: Hardware</li>
-            <li>Object Oriented Analysis & Design</li>
-            <li>Project Management</li>
-            <li>User Interface Design</li>
-            <li>C#</li>
-            <li>Web Design (HTML / CSS)</li>
-            <li>Responsive Web Design</li>
-            <li>Computer Math & Statistics</li>
-            <li>Development Tools</li>
-          </ul>
-        </div>
-      </section>
-          
+      <li><a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript (ES6+)</a></li>
+      <li><a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener noreferrer">C#</a></li>
+      <li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">Java</a></li>
+      <li><a href="https://www.php.net/" target="_blank" rel="noopener noreferrer">PHP</a></li>
+      
+    </ul>
+
+    <h3>Web Technologies</h3>
+    <ul>
+      <li><a href="https://developer.mozilla.org/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML5</a></li>
+      <li><a href="https://developer.mozilla.org/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS3</a></li>
+      <li><a href="https://developer.mozilla.org/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer">Responsive Design</a></li>
+    </ul>
+
+    <h3>Frameworks & Libraries</h3>
+    <ul>
+      <li><a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a></li>
+      <li><a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">Express</a></li>
+      <li><a href="https://www.tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a></li>
+      <li><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a></li>
+    </ul>
+
+    <h3>Backend & Databases</h3>
+    <ul>
+      <li><a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">Node.js</a></li>
+      <li><a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer">MongoDB</a></li>
+      <li><a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer">SQL</a></li>
+    </ul>
+
+    <h3>Version Control & Tools</h3>
+    <ul>
+      <li><a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">Git & GitHub</a></li>
+    </ul>
+  </div>
+</section>
+
 
 
       <section className="projects" id="projects">
@@ -124,25 +113,20 @@ const HomePage = () => {
               <p>It then uses that ID to play the video using the YoutubePlayer component.</p>
               <Link to="/video" className="project-link">Youtube Video Player</Link>
             </div>
-           {/*
-            <div className="project-item">
-              <h3>Interactive Task List</h3>
-              <p>A simple task list that is full stack using MERN. (MongoDB, Express, React, Node.js) It uses 3 out of 4 of the standard CRUD functions (Create, Read & Delete) to add, view and delete tasks.</p>
-              <p>It also uses a date dropdown to filter tasks by date.</p>
-              <p>The API for the DateDropdown and TaskList are integrated to work together. The DateDropdown uses the API to fetch the dates and the TaskList uses the API to fetch the tasks for the selected date.</p>
-              <Link to="/task" className="project-link">Interactive Task List</Link>
-            </div> 
-            
-              This is commented out because I don't feel like hosting the back-end just for 1 project. The rest of them either use API calls or don't need a backend!
-              If I wanted to actually display this on my portfolio I would need to host the backend using some sort of service, then connect all the API calls to the hosted backend.
-
-            */}
-
+           
               <div className="project-item">
               <h3>Netherlands Informational Website</h3>
               <p>A multi page informational website created for my Responsive Web Design Course.</p>
               <p>It uses Bootstrap, i18n (Internationalization), AOS (Animate On Scroll) and other modern web technologies.</p>
               <a href="https://jjardine98.github.io/NetherlandsWebsite/" target="_blank" rel="noopener noreferrer" className = "project-link">Netherlands Informational Website</a>
+            </div>
+
+            <div className="project-item">
+              <h3>Blue Fox Forge Website</h3>
+              <p>A website created for Blue Fox Forge a local blacksmithing business owned by my Father.</p>
+              <p>It's just a simple loading page that outlines his business and allows people to contact him regarding projects!</p>
+              <p>It uses Tailwind CSS / React and it's hosted on netlify. A github repository is linked to it for auto-updates.</p>
+              <a href="https://bluefoxforge.netlify.app/" target="_blank" rel="noopener noreferrer" className= "project-link">Blue Fox Forge Website</a>
             </div>
 
             <div className="project-item">
@@ -166,13 +150,6 @@ const HomePage = () => {
               <a href="https://jjardine98.github.io/UseCases/" target="_blank" rel="noopener noreferrer" className = "project-link">Use Cases - Retail System</a>
             </div>
 
-
-            <div className="project-item">
-              <h3>Quiz / Flashcard App</h3>
-              <p>A simple Quiz and Flashcard app I created to help my girlfriend study for her Labratory Tech National Exam. It uses JSON files for the quizzes allowing any number of questions to be added.</p>
-              <p>You can also view the grades of the quizzes you have taken (stored in local storage).</p>
-              <a href="https://jjardine98.github.io/SuzannesStudyTools/" target="_blank" rel="noopener noreferrer" className= "project-link">Quiz / Flashcard App</a>
-            </div>
             {/* Add more projects as needed */}
           </div>
         </div>
